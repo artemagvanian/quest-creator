@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
+  <title>Інтерактивна мапа</title>
+</head>
+<body>
+  <div class="page">
+    <div class="page__demo">
+      <div class="main-container page__container">
+        <div class="timeline">
+          <div class="timeline__group">
+            <span class="timeline__year">1914</span>
+            <div class="timeline__box">
+              <div class="timeline__date" data-ref="exampleRadios">
+                <span class="timeline__day">1</span>
+                <span class="timeline__month">Авг</span>
+              </div>
+              <div class="timeline__post">
+                <div class="timeline__content">
+                  <p>Началась первая в истории человечества мировая война. ее повлекло непримиримое противостояние государств - участников двух военных блоков - Тройственного союза (Австро-Венгрия, Германия, Италия) и Антанты (Великобритания, Франция, Россия). Каждая из стран стремилась достичь своих геополитических интересов. Украина также занимала в них довольно заметное место в силу своего выгодного географического положения, экономического и человеческого потенциала.</p>
+                  <button type="button" class="btn btn-primary w-100" data-toggle="modal" data-target="#modal1">
+                    Дополнительная информация
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="timeline__box">
+              <div class="timeline__date">
+                <span class="timeline__day">1</span>
+                <span class="timeline__month">Sept</span>
+              </div>
+              <div class="timeline__post">
+                <div class="timeline__content">
+                  <p>Started from University of Pennsylvania. This is an important stage of my career. Here I worked in the local magazine. The experience greatly affected me</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="timeline__group">
+            <span class="timeline__year">2014</span>
+            <div class="timeline__box">
+              <div class="timeline__date">
+                <span class="timeline__day">14</span>
+                <span class="timeline__month">Jul</span>
+              </div>
+              <div class="timeline__post">
+                <div class="timeline__content">
+                  <p>Travels to France, Italy, Spain, and Peru. After completing fashion editorial in Lima, prolongs stay to make portraits of local people in a daylight studio</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="timeline__group">
+            <span class="timeline__year">2016</span>
+            <div class="timeline__box">
+              <div class="timeline__date">
+                <span class="timeline__day">28</span>
+                <span class="timeline__month">Aug</span>
+              </div>
+              <div class="timeline__post">
+                <div class="timeline__content">
+                  <p>Upon moving to Brooklyn that summer, I began photographing weddings in Chicago</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Пройдите тест</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h3 class="mb-3">Ответьте на вопрос:</h3>
+          <form>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked data-right>
+              <label class="form-check-label" for="exampleRadios1">
+                Правильный ответ
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+              <label class="form-check-label" for="exampleRadios2">
+                Неправильный ответ
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+              <label class="form-check-label" for="exampleRadios3">
+                Неправильный ответ
+              </label>
+            </div>
+            <a class="btn w-100 mt-4 btn-secondary submitter text-light" data-ref="exampleRadios">Проверить</a>
+            <p class="mt-2 center" data-ref="exampleRadios"></p>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src='index.js'></script>
+</body>
+</html>
