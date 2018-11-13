@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" v-for="(card, cardId) in cards">
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-12" v-for="(card, cardId) in cards">
                     <div class="card mb-4 bg-dark text-white">
                         <img class="card-img full-width" :src="'assets/' + cardId + '.jpg'" alt="Card image">
                         <div class="card-img-overlay">
@@ -38,18 +38,21 @@
                             </div>
                             <div class="modal-body">
                                 <p>{{ card.modalContent }}</p>
-                                <div v-if="card.test">
+                                <div v-if="card.test" class="border p-3 border-info rounded">
                                     <p>{{ card.test.question }}</p>
                                     <div v-for="(variant, variantId) in card.test.variants">
                                         <input :id="'variant-' + cardId + '-' + variantId" :name="'test-' + cardId" :type="card.test.type" :value="variant.text" v-model="card.test.chosen">
                                         <label :for="'variant-' + cardId + '-' + variantId">{{ variant.text }}</label>
                                     </div>
-                                    <button class="btn btn-primary" @click="checkAnswers(card)">Ответить</button>
+                                    <div class="mt-2">
+                                        <a tabindex="0" v-if="card.test.hint" class="btn btn-info" data-toggle="popover" title="Подсказка" :data-content="card.test.hint">Получить подсказку</a>
+                                        <button class="btn btn-primary" @click="checkAnswers(card, cardId)">Ответить</button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <p v-if="card.test">Вы {{ stage > cardId ? '' : 'не' }} выполнили это задание.</p>
-                                <p v-if="card.secretWord">Секретное слово: {{ card.secretWord }}</p>
+                                <p v-if="card.test" class="badge mr-auto my-auto" :class="stage > cardId ? 'badge-success' : 'badge-danger'">Вы {{ stage > cardId ? '' : 'не' }} выполнили это задание.</p>
+                                <p v-if="card.test && card.test.secretWord && stage > cardId" class="badge badge-info my-auto">Секретное слово: {{ card.test.secretWord }}</p>
                             </div>
                         </div>
                     </div>

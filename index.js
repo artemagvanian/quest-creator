@@ -4,25 +4,24 @@ var app = new Vue({
 		if (localStorage.stage) {
 			this.stage = localStorage.stage;
 		}
+		$(function () {
+			$('[data-toggle="popover"]').popover({
+				placement: 'left',
+				trigger: 'focus'
+			})
+		})
 	},
 	watch: {
 		stage(newStage) {
 			localStorage.stage = newStage;
 		}
 	},
-	computed: {
-		groupedCards() {
-			return _.chunk(this.cards, 4)
-
-		}
-	},
 	methods: {
-		checkAnswers(card) {
+		checkAnswers(card, cardId) {
 			let rightVariants = card.test.variants.filter(variant => variant.right).map(variant => variant.text);
 			if (this.arraysEqual(rightVariants, card.test.chosen)) {
-				this.stage++;
+				this.stage = this.stage > (cardId + 1) ? this.stage : cardId + 1;
 			}
-
 		},
 		arraysEqual(a, b) {
 			if (a === b) return true;
@@ -42,8 +41,9 @@ var app = new Vue({
 			title: "Card 1",
 			content: "На этой станции вы должны ознакомиться с основами прохождения квеста",
 			modalContent: "Тут будет что-то...",
-			secretWord: "Секретное слово 1",
 			test: {
+				hint: "Подсказка",
+				secretWord: "Секретное слово 1",
 				type: "checkbox",
 				question: "Выберите правильный ответ: ",
 				chosen: [],
@@ -75,7 +75,6 @@ var app = new Vue({
 			title: "Card 1",
 			content: "На этой станции вы должны ознакомиться с основами прохождения квеста",
 			modalContent: "Тут будет что-то...",
-			secretWord: "Секретное слово 2",
 			test: {
 				type: "radio",
 				question: "Выберите правильный ответ: ",
