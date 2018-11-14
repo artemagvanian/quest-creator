@@ -19,7 +19,8 @@ var app = new Vue({
 	methods: {
 		checkAnswers(card, cardId) {
 			let rightVariants = card.test.variants.filter(variant => variant.right).map(variant => variant.text);
-			if (this.arraysEqual(rightVariants, card.test.chosen)) {
+
+			if (this.arraysEqual(rightVariants, card.test.chosen) || rightVariants[0] == card.test.chosen) {
 				this.stage = this.stage > (cardId + 1) ? this.stage : cardId + 1;
 			}
 		},
@@ -38,86 +39,107 @@ var app = new Vue({
 		stage: 0,
 		cards: [
 		{
-			title: "Card 1",
+			title: "Станція 1",
 			content: "На этой станции вы должны ознакомиться с основами прохождения квеста",
-			modalContent: "Тут будет что-то...",
+			modalContent: "За допомогою малюнку-підказки, визначте, про що йдеться мова",
 			test: {
-				hint: "Подсказка",
-				secretWord: "Секретное слово 1",
-				type: "checkbox",
-				question: "Выберите правильный ответ: ",
-				chosen: [],
-				variants: [
-				{
-					text: "A",
-					right: true,
-				},
-				{
-					text: "B",
-					right: true,
-				},
-				{
-					text: "C",
-					right: true,
-				},
-				{
-					text: "D",
-					right: false,
-				},
-				{
-					text: "E",
-					right: false,
-				}
-				]
-			}
-		},
-		{
-			title: "Card 1",
-			content: "На этой станции вы должны ознакомиться с основами прохождения квеста",
-			modalContent: "Тут будет что-то...",
-			test: {
+				hint: "Третій універсал",
+				secretWord: "1917",
 				type: "radio",
-				question: "Выберите правильный ответ: ",
+				question: "Виберіть правильну відповідь: ",
 				chosen: [],
 				variants: [
 				{
-					text: "A",
+					text: "Держава Скоропадського",
+					right: false,
+				},
+				{
+					text: "Директорія",
+					right: false,
+				},
+				{
+					text: "Існування УНР",
 					right: true,
 				},
 				{
-					text: "B",
+					text: "Деникінський режим",
 					right: false,
 				},
 				{
-					text: "C",
-					right: false,
-				},
-				{
-					text: "D",
-					right: false,
-				},
-				{
-					text: "E",
+					text: "Отоманщина",
 					right: false,
 				}
 				]
 			}
 		},
 		{
-			title: "Card 1",
+			title: "Станція 2",
 			content: "На этой станции вы должны ознакомиться с основами прохождения квеста",
-			modalContent: "Тут будет что-то...",
+			modalContent: "Назвіть дату і подію, про яку йде мова в документі",
+			test: {
+				hint: "Вигнали з Києва",
+				secretWord: " — 1921",
+				type: "radio",
+				question: "Виберіть правильну відповідь: ",
+				chosen: [],
+				variants: [
+				{
+					text: "Перший всеукраїнський з'їзд рад у Харкові",
+					right: true,
+				},
+				{
+					text: "Засідання тимчасового уряду",
+					right: false,
+				},
+				{
+					text: "І військовий з'їзд",
+					right: false,
+				},
+				{
+					text: "Всеукраїнський хліборобський з'їзд",
+					right: false,
+				},
+				{
+					text: "Зібрання трудового конгресу",
+					right: false,
+				}
+				]
+			}
 		},
 		{
-			title: "Card 1",
+			title: "Станція 2",
 			content: "На этой станции вы должны ознакомиться с основами прохождения квеста",
-			modalContent: "Тут будет что-то...",
+			modalContent: "Назвіть дату і подію, про яку йде мова в документі",
+			test: {
+				hint: "Вигнали з Києва",
+				secretWord: " — 1921",
+				type: "radio",
+				question: "Виберіть правильну відповідь: ",
+				chosen: [],
+				variants: [
+				{
+					text: "Перший всеукраїнський з'їзд рад у Харкові",
+					right: true,
+				},
+				{
+					text: "Засідання тимчасового уряду",
+					right: false,
+				},
+				{
+					text: "І військовий з'їзд",
+					right: false,
+				},
+				{
+					text: "Всеукраїнський хліборобський з'їзд",
+					right: false,
+				},
+				{
+					text: "Зібрання трудового конгресу",
+					right: false,
+				}
+				]
+			}
 		},
-		{
-			title: "Card 1",
-			content: "На этой станции вы должны ознакомиться с основами прохождения квеста",
-			modalContent: "Тут будет что-то...",
-		}
 		]
 	}
 })

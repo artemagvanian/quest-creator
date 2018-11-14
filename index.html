@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="index.css">
-    <title>Інтерактивна мапа</title>
+    <title>Історичний квест</title>
 </head>
 <body>
     <div id="app">
@@ -45,14 +45,14 @@
                                         <label :for="'variant-' + cardId + '-' + variantId">{{ variant.text }}</label>
                                     </div>
                                     <div class="mt-2">
-                                        <a tabindex="0" v-if="card.test.hint" class="btn btn-info" data-toggle="popover" title="Подсказка" :data-content="card.test.hint">Получить подсказку</a>
-                                        <button class="btn btn-primary" @click="checkAnswers(card, cardId)">Ответить</button>
+                                        <a tabindex="0" v-if="card.test.hint" class="btn btn-info" data-toggle="popover" title="Підказка" :data-content="card.test.hint">Отримати підказку</a>
+                                        <button class="btn btn-primary" @click="checkAnswers(card, cardId)">Відповісти</button>
                                     </div>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <p v-if="card.test" class="badge mr-auto my-auto" :class="stage > cardId ? 'badge-success' : 'badge-danger'">Вы {{ stage > cardId ? '' : 'не' }} выполнили это задание.</p>
-                                <p v-if="card.test && card.test.secretWord && stage > cardId" class="badge badge-info my-auto">Секретное слово: {{ card.test.secretWord }}</p>
+                                <p v-if="card.test" class="badge mr-auto my-auto" :class="stage > cardId ? 'badge-success' : 'badge-danger'">Ви {{ stage > cardId ? '' : 'не' }} виконали це завдання.</p>
+                                <p v-if="card.test && card.test.secretWord && stage > cardId" class="badge badge-info my-auto">Секретне слово: {{ card.test.secretWord }}</p>
                             </div>
                         </div>
                     </div>
