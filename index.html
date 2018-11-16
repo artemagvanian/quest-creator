@@ -38,6 +38,7 @@
                             </div>
                             <div class="modal-body">
                                 <p>{{ card.modalContent }}</p>
+                                <img v-if="card.imageLink" :src="card.imageLink" class="w-100 mb-4">
                                 <div v-if="card.test" class="border p-3 border-info rounded">
                                     <p>{{ card.test.question }}</p>
                                     <div v-for="(variant, variantId) in card.test.variants">
