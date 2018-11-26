@@ -77,7 +77,7 @@ var app = new Vue({
 			title: "Більшовицька",
 			content: "На этой станции вы должны ознакомиться с основами прохождения квеста",
 			modalContent: "Назвіть дату й подію, про яку йдеться у документі.",
-			imageLink: "assets/0.jpg",
+			imageLink: "assets/img_1.jpg",
 			test: {
 				hint: "17.12.1917",
 				secretWord: "а под",
@@ -112,7 +112,7 @@ var app = new Vue({
 			title: "Гетьманська",
 			content: "На этой станции вы должны ознакомиться с основами прохождения квеста",
 			modalContent: "Назвіть орган влади, користуючись картинками.",
-			imageLink: "assets/img_0.jpg",
+			imageLink: "assets/img_2.jpg",
 			test: {
 				hint: "29.04.1918",
 				secretWord: "в вагон",
@@ -147,7 +147,7 @@ var app = new Vue({
 			title: "Левицька",
 			content: "На этой станции вы должны ознакомиться с основами прохождения квеста",
 			modalContent: "Назвіть дату події.",
-			imageLink: "assets/img_0.jpg",
+			imageLink: "assets/img_3.jpg",
 			test: {
 				hint: "Створення ЗУНР",
 				secretWord: "а территория",
@@ -182,7 +182,7 @@ var app = new Vue({
 			title: "Гуляйпільська",
 			content: "На этой станции вы должны ознакомиться с основами прохождения квеста",
 			modalContent: "Назвіть людину.",
-			imageLink: "assets/img_0.jpg",
+			imageLink: "assets/img_4.jpg",
 			test: {
 				hint: "Гуляйпільський революційний штаб",
 				secretWord: "вагоном директория",
