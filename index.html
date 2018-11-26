@@ -50,10 +50,17 @@
                                         <button class="btn btn-primary" @click="checkAnswers(card, cardId)">Відповісти</button>
                                     </div>
                                 </div>
+                                <div v-if="card.sortable">
+                                    <draggable v-model="card.sortable.variants" class="row m-0">
+                                        <div class="col p-2 border border-info rounded mx-2 text-center" v-for="element in card.sortable.variants">{{element}}</div>
+                                    </draggable>
+                                    <button class="btn btn-primary mt-4 col" @click="checkSortable(card, cardId)">Перевірити</button>
+                                </div>
                             </div>
                             <div class="modal-footer">
                                 <p v-if="card.test" class="badge mr-auto my-auto" :class="stage > cardId ? 'badge-success' : 'badge-danger'">Ви {{ stage > cardId ? '' : 'не' }} виконали це завдання.</p>
                                 <p v-if="card.test && card.test.secretWord && stage > cardId" class="badge badge-info my-auto">Секретне слово: {{ card.test.secretWord }}</p>
+                                <p v-if="completed" class="badge badge-info my-auto">Ви завершили цей квест!</p>
                             </div>
                         </div>
                     </div>
@@ -67,6 +74,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.7.0/Sortable.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Vue.Draggable/2.15.0/vuedraggable.min.js"></script>
 <script src='index.js'></script>
 </body>
 </html>

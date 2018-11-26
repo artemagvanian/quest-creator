@@ -2,7 +2,10 @@ var app = new Vue({
 	el: '#app',
 	mounted() {
 		if (localStorage.stage) {
-			this.stage = localStorage.stage;
+			this.stage = JSON.parse(localStorage.stage);
+		}
+		if (localStorage.completed) {
+			this.completed = JSON.parse(localStorage.completed);
 		}
 		$(function () {
 			$('[data-toggle="popover"]').popover({
@@ -14,6 +17,9 @@ var app = new Vue({
 	watch: {
 		stage(newStage) {
 			localStorage.stage = newStage;
+		},
+		completed(newCompleted) {
+			localStorage.completed = newCompleted;
 		}
 	},
 	methods: {
@@ -33,10 +39,16 @@ var app = new Vue({
 				if (a[i] !== b[i]) return false;
 			}
 			return true;
+		},
+		checkSortable(card, cardId) {
+			if (card.sortable.variants.join(' ') === card.sortable.answer) {
+				this.completed = true;
+			}
 		}
 	},
 	data: {
 		stage: 0,
+		completed: false,
 		cards: [
 		{
 			title: "УЦРівська",
@@ -251,33 +263,9 @@ var app = new Vue({
 			title: "Кінцева",
 			content: "На этой станции вы должны ознакомиться с основами прохождения квеста",
 			modalContent: "Вітаю. У тебе вже є всі слова, а отже ти можеш скласти загадану	приказку.",
-			test: {
-				hint: "Вигнали з Києва",
-				type: "radio",
-				question: "Виберіть правильну відповідь: ",
-				chosen: [],
-				variants: [
-				{
-					text: "Перший всеукраїнський з'їзд рад у Харкові",
-					right: true,
-				},
-				{
-					text: "Засідання тимчасового уряду",
-					right: false,
-				},
-				{
-					text: "І військовий з'їзд",
-					right: false,
-				},
-				{
-					text: "Всеукраїнський хліборобський з'їзд",
-					right: false,
-				},
-				{
-					text: "Зібрання трудового конгресу",
-					right: false,
-				}
-				]
+			sortable: {
+				variants: ['Some', 'other', 'stuff'],
+				answer: "Some other stuff",
 			}
 		},
 		]
