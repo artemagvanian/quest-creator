@@ -39,13 +39,13 @@ var app = new Vue({
 		stage: 0,
 		cards: [
 		{
-			title: "Станція 1",
+			title: "УЦРівська",
 			content: "На этой станции вы должны ознакомиться с основами прохождения квеста",
 			modalContent: "За допомогою малюнку-підказки, визначте, про що йдеться мова",
-			imageLink: "assets/0.jpg",
+			imageLink: "assets/img_0.jpg",
 			test: {
 				hint: "Третій універсал",
-				secretWord: "1917",
+				secretWord: "Едет вся",
 				type: "radio",
 				question: "Виберіть правильну відповідь: ",
 				chosen: [],
@@ -59,7 +59,7 @@ var app = new Vue({
 					right: false,
 				},
 				{
-					text: "Існування УНР",
+					text: "Проголошення УНР",
 					right: true,
 				},
 				{
@@ -72,14 +72,15 @@ var app = new Vue({
 				}
 				]
 			}
-		},
+		}, 
 		{
-			title: "Станція 2",
+			title: "Більшовицька",
 			content: "На этой станции вы должны ознакомиться с основами прохождения квеста",
-			modalContent: "Назвіть дату і подію, про яку йде мова в документі",
+			modalContent: "Назвіть дату й подію, про яку йдеться у документі.",
+			imageLink: "assets/0.jpg",
 			test: {
-				hint: "Вигнали з Києва",
-				secretWord: " — 1921",
+				hint: "17.12.1917",
+				secretWord: "а под",
 				type: "radio",
 				question: "Виберіть правильну відповідь: ",
 				chosen: [],
@@ -108,12 +109,150 @@ var app = new Vue({
 			}
 		},
 		{
-			title: "Станція 2",
+			title: "Гетьманська",
 			content: "На этой станции вы должны ознакомиться с основами прохождения квеста",
-			modalContent: "Назвіть дату і подію, про яку йде мова в документі",
+			modalContent: "Назвіть орган влади, користуючись картинками.",
+			imageLink: "assets/img_0.jpg",
+			test: {
+				hint: "29.04.1918",
+				secretWord: "в вагон",
+				type: "radio",
+				question: "Виберіть правильну відповідь: ",
+				chosen: [],
+				variants: [
+				{
+					text: "ЗУНР",
+					right: false,
+				},
+				{
+					text: "УСРР",
+					right: false,
+				},
+				{
+					text: "УЦР",
+					right: false,
+				},
+				{
+					text: "Скоропадська держава",
+					right: true,
+				},
+				{
+					text: "Директорія",
+					right: false,
+				}
+				]
+			}
+		},
+		{
+			title: "Левицька",
+			content: "На этой станции вы должны ознакомиться с основами прохождения квеста",
+			modalContent: "Назвіть дату події.",
+			imageLink: "assets/img_0.jpg",
+			test: {
+				hint: "Створення ЗУНР",
+				secretWord: "а территория",
+				type: "radio",
+				question: "Виберіть правильну відповідь: ",
+				chosen: [],
+				variants: [
+				{
+					text: "14.12.1918",
+					right: false,
+				},
+				{
+					text: "22.01.1918",
+					right: false,
+				},
+				{
+					text: "14.03.1917",
+					right: false,
+				},
+				{
+					text: "13.11.1918",
+					right: true,
+				},
+				{
+					text: "17.12.1917",
+					right: false,
+				}
+				]
+			}
+		},
+		{
+			title: "Гуляйпільська",
+			content: "На этой станции вы должны ознакомиться с основами прохождения квеста",
+			modalContent: "Назвіть людину.",
+			imageLink: "assets/img_0.jpg",
+			test: {
+				hint: "Гуляйпільський революційний штаб",
+				secretWord: "вагоном директория",
+				type: "radio",
+				question: "Виберіть правильну відповідь: ",
+				chosen: [],
+				variants: [
+				{
+					text: "Л. Троцький",
+					right: false,
+				},
+				{
+					text: "В. Ульянов",
+					right: false,
+				},
+				{
+					text: "П. Скоропадський",
+					right: false,
+				},
+				{
+					text: "С. Петлюра",
+					right: false,
+				},
+				{
+					text: "Н. Махно",
+					right: true,
+				}
+				]
+			}
+		},
+		{
+			title: "Павловська",
+			content: "На этой станции вы должны ознакомиться с основами прохождения квеста",
+			modalContent: "Назвіть дату події, яка проілюстрована нижче.",
+			imageLink: "assets/img_5.jpg",
+			test: {
+				secretWord: "нём",
+				type: "radio",
+				question: "Виберіть правильну відповідь: ",
+				chosen: [],
+				variants: [
+				{
+					text: "Зречення Скоропадського",
+					right: true,
+				},
+				{
+					text: "З'їзд більшовиків",
+					right: false,
+				},
+				{
+					text: "Прийняття IV універсалу",
+					right: false,
+				},
+				{
+					text: "Перший зимовий похід українских військ",
+					right: false,
+				},
+				{
+					text: "Зібрання трудового конгресу",
+					right: false,
+				}
+				]
+			}
+		},
+		{
+			title: "Кінцева",
+			content: "На этой станции вы должны ознакомиться с основами прохождения квеста",
+			modalContent: "Вітаю. У тебе вже є всі слова, а отже ти можеш скласти загадану	приказку.",
 			test: {
 				hint: "Вигнали з Києва",
-				secretWord: " — 1921",
 				type: "radio",
 				question: "Виберіть правильну відповідь: ",
 				chosen: [],
